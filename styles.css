@@ -90,9 +90,19 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #ed4e4e;
-    color: #f0ffff;
-
+    background: #09BC8A;
+    color: #ffffff;
+    transition: all 0.2s ease;
 }
 
+.button:hover {
+    background: #d655ed;
+    padding: 11px 21px;
+    transition: all 0.2s ease;
+}
 
+.navbar__links:hover {
+    color:#09BC8A;
+    transition: all 0.2s ease;
+    
+}
