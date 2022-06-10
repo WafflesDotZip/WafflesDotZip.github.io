@@ -110,10 +110,6 @@ p{
   grid-template-columns: 14rem auto 23rem;
 }
 
-aside{
-  height: 100vh;
-  background-color: #7d2cff;
-}
 
 aside .top{
   background: #ffffff;
@@ -127,3 +123,40 @@ aside .logo img {
   width: 2rem;
   height: 2rem;
 }
+
+aside .logo {
+  display: flex;
+  gap: .8rem
+}
+
+/* ======================= SIDEBAR ==========================*/
+
+aside .sidebar {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+  position: relative;
+  top: 3rem;
+}
+
+aside h3 {
+  font-weight: 1000;
+}
+
+aside .sidebar a{
+  display: flex;
+  color: var(--color-info-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  height: 3.7rem;
+  transition: all 300ms ease;
+}
+
+aside .sidebar a span {
+  font-size: 1.6rem;
+}
+
+aside .sidebar
