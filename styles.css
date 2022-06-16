@@ -10,7 +10,7 @@
   --color-light: #848bc82e;
   --color-dark:rgba(11, 11, 11, 0.18)e;
   --color-bg: #f0f0f0;
-  --box-shadow: 0px 0px 20px rgb(163, 163, 163);
+  --box-shadow: 0px 0px 10px rgb(163, 163, 163);
   --color-info-dark: #7d8da1;
 }
 
@@ -119,6 +119,19 @@ aside .top{
   padding: 10px 15px;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgb(163, 163, 163);
+  transition: all 200ms ease;
+}
+
+aside .top:hover{
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(163, 163, 163);
+  transition: all 200ms ease;
 }
 
 aside .logo img {
@@ -127,9 +140,9 @@ aside .logo img {
 }
 
 aside .close {
-  margin-top: 4px;
+  margin-top: 2px;
   padding-top: 3px;
-  padding-left: 3px;
+  padding-left: 2.5px;
   padding-right: 3px;
   border-radius: 300px;
 }
@@ -142,7 +155,12 @@ aside .close:hover {
 
 aside .logo {
   display: flex;
-  gap: .8rem
+  gap: .6rem;
+}
+
+#brand {
+  font-size: 1.3rem;
+  white-space: nowrap;
 }
 
 /* ======================= SIDEBAR ==========================*/
@@ -223,6 +241,7 @@ aside .sidebar .message-count {
 
 aside .sidebar a:hover .message-count {
   background: var(--color-primary);
+  margin-left: 0rem;
 
 
 }
@@ -292,5 +311,122 @@ main .insights h3 {
 
 
  main .insights .progress{
-   
+   position: relative;
+   width: 92px;
+   height: 92px;
+   border-radius: 50%;
+
  }
+
+ main .insights svg {
+  width: 7rem;
+  height 7rem;
+ }
+
+main .insights svg circle{
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px,5px);
+  stroke-dasharray: 110;
+  stroke-dashoffset: 52;
+}
+
+main .insights .Accidents svg circle{
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px,5px);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 52;
+}
+
+main .insights .progress .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ /* ===================== orders */
+main .recent-orders {
+  margin-top: 2rem;
+
+ }
+main .recent-orders h2 {
+  margin-top: .8rem;
+
+ }
+
+main .recent-orders table {
+  background: var(--color-white);
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 200ms ease;
+ }
+
+ main .recent-orders table:hover {
+  background: var(--color-white);
+  width: 100%;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: none;
+  transition: all 200ms ease;
+ }
+
+main table tbody td{
+  height: 2.8rem;
+  border-bottom: 1.5px solid var(--color-light);
+  color: #313131;
+
+ }
+
+main table tbody tr:last-child td{
+  border: none;
+ }
+
+ main .recent-orders a{
+  text-align: center;
+  display: block;
+  margin: 1rem auto;
+  color: var(--color-primary);
+ }
+
+/* R */
+.right {
+  margin-top: 1.4rem;
+}
+
+.right .top {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+ 
+}
+
+.right .top button {
+  display: none;
+}
+
+.right .theme-toggler {
+  background: var(--color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.6rem;
+  width: 4.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+
+}
