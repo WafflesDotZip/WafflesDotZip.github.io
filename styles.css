@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
 :root {
-  --color-primary: #7d2cff;
+  --color-primary: #8254ff;
   --color-danger: #ff4a63;
   --color-success: #63ff80;
   --color-warn: #ff8d2a;
@@ -11,7 +11,20 @@
   --color-dark:rgba(11, 11, 11, 0.18)e;
   --color-bg: #f0f0f0;
   --box-shadow: 0px 0px 10px rgb(163, 163, 163);
-  --color-info-dark: #7d8da1;
+  --color-info-dark: #2c323a;
+}
+
+.dark-theme-var {
+  --color-primary: #9068ff;
+  --color-danger: #ff4a63;
+  --color-success: #63ff80;
+  --color-warn: #ff8d2a;
+  --color-white: #232323;
+  --color-light: #9096cb2e;
+  --color-dark:rgba(236, 236, 236, 0.18)e;
+  --color-bg: #111111;
+  --box-shadow: 0px 0px 10px rgb(33, 33, 33);
+  --color-info-dark: #e5e5e5;
 }
 
 * {
@@ -54,23 +67,32 @@ img {
 h1{
   font-weight: 800;
   font-size: 1.8rem;
+  color: var(--color-info-dark);
 }
 h2{
   font-size: 1.4rem;
+  color: var(--color-info-dark);
 }
 h3{
   font-size: 0.87rem;
+  color: var(--color-info-dark);
 }
 h4 {
   font-size: 0.8rem;
+  color: var(--color-info-dark);
 }
 h5 {
   font-size: 0.77rem;
+  color: var(--color-info-dark);
 }
 small {
   font-size: 0.75rem;
+  color: var(--color-info-dark);
 }
 
+.recent-orders {
+  color: var(--color-info-dark);
+}
 .profile-img{
   width: 2.8rem;
   height: 2.8rem;
@@ -106,19 +128,19 @@ p{
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
-  grid-template-columns: 14rem auto 23rem;
+  grid-template-columns: 16rem auto 23rem;
 }
 
 
 aside .top{
-  background: #ffffff;
+  background: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1.2rem;
   padding: 10px 15px;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px rgb(163, 163, 163);
+  box-shadow: var(box-shadow);
   transition: all 200ms ease;
 }
 
@@ -145,10 +167,11 @@ aside .close {
   padding-left: 2.5px;
   padding-right: 3px;
   border-radius: 300px;
+  color: var(--color-info-dark);
 }
 
 aside .close:hover {
-  background-color: var(--color-bg);
+  background-color: var(--color-danger);
   transition: all 200ms ease;
 }
 
@@ -156,11 +179,15 @@ aside .close:hover {
 aside .logo {
   display: flex;
   gap: .6rem;
+  white-space: nowrap;
 }
 
-#brand {
-  font-size: 1.3rem;
-  white-space: nowrap;
+aside .top:hover #brand {
+  color: black;
+}
+
+aside .top:hover .close {
+  color: black;
 }
 
 /* ======================= SIDEBAR ==========================*/
@@ -233,15 +260,17 @@ aside .sidebar a:hover span {
 
 aside .sidebar .message-count {
   background: var(--color-danger);
-  color: var(--color-white);
+  color: white;
   padding: 2px 10px;
   font-size: 15px;
   border-radius: 8px;
+  box-shadow: 0px 0px 5px 1px#ff6c6c;
 }
 
 aside .sidebar a:hover .message-count {
   background: var(--color-primary);
   margin-left: 0rem;
+  box-shadow: 0px 0px 5px 1px#b66cff;
 
 
 }
@@ -299,6 +328,7 @@ main .insights > div .middle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--color-info-dark);
 
 }
 
@@ -320,7 +350,7 @@ main .insights h3 {
 
  main .insights svg {
   width: 7rem;
-  height 7rem;
+  height: 7rem;
  }
 
 main .insights svg circle{
@@ -388,7 +418,7 @@ main .recent-orders table {
 main table tbody td{
   height: 2.8rem;
   border-bottom: 1.5px solid var(--color-light);
-  color: #313131;
+  color: var(--color-info-dark);
 
  }
 
@@ -424,9 +454,110 @@ main table tbody tr:last-child td{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 1.6rem;
-  width: 4.2rem;
-  border-radius: 1rem;
+  height: 2rem;
+  width: 6rem;
+  border-radius: .8rem;
   cursor: pointer;
+  gap: 0rem;
+}
 
+.right .theme-toggler span {
+  font-size: 1.5rem;
+  width: 500%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right .theme-toggler span.active{
+  background: rgb(255, 169, 56);
+  color: white;
+  border-radius: .8rem;
+  transition: color 1000ms ease;
+}
+
+
+.right .top .profile {
+  display: flex;
+  gap: 1.5rem;
+  text-align: right;
+}
+
+.right .top .profile-photo img {
+  width: 4rem;
+  border-radius:50%;
+  margin-top: -.6rem;
+  border-width: 1rem;
+
+}
+
+.right .top .profile-photo circle {
+  z-index: 9;
+  stroke: var(--color-primary);
+  fill: none;
+  stroke-width: 1rem;
+  stroke-linecap: circle;
+  white-space: nowrap;
+  position: relative;
+
+
+}
+
+aside .sidebar {
+  border-radius: 0rem;
+  background: var(--color-bg);
+}
+/*media queries*/
+
+@media screen and (max-width: 1200px) {
+  body {
+    
+  }
+  .container{
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+    transition: width 200ms ease;
+  }
+
+  aside .logo h2{
+    display: none;
+  }
+
+  
+  aside .sidebar h3 {
+    display: none;
+    
+  }
+
+  aside .sidebar a{
+    width: 7rem;
+  }
+  aside .sidebar .message-count {
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    margin: -.5rem;
+  }
+  aside .sidebar a:last-child{
+    position: relative;
+    margin-top: 1.8rem;
+  }
+  main .recent-orders{
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+
+  main .recent-orders table{
+    width: 83vw;
+  }
+}
+
+.info {
+  color: var(--color-info-dark);
 }
