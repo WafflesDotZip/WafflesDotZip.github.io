@@ -64,7 +64,7 @@
     <! ----------------------------------------------------->
     <main>
       <h1 id="welcome">Welcome, 05-V</h1>
-      <button>Lock Panel</button>
+      <a id="next" class="next" href="/GLASS">Show me next website</a>
       <div class="date">
         <input type="date">
       </div>
@@ -178,7 +178,21 @@
       </div>
     </div>
   </div>
-  <script src="./app.js"></script>
-
+  <script type="text/javascript" src="/vanilla-tilt.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll("#next"), {
+          max: 25,
+          speed: 400,
+          glare: true,
+          "max-glare": 1,
+          perspective: 500,
+          reverse: true,
+          max: 20,
+          scale: 1.1,
+          
+          
+      });
+  </script>
 </body>
 </html>
